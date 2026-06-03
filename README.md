@@ -1,8 +1,6 @@
 # MCP Server Personal Assistant
 
-A Model Context Protocol (MCP) server that connects AI models to 
-external tools — enabling a fully autonomous personal assistant 
-via Telegram. One message handles everything.
+A Model Context Protocol (MCP) server that connects AI models to external tools — enabling a fully autonomous personal assistant via Telegram. One message handles everything.
 
 ## Demo
 
