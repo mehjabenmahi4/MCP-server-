@@ -4,11 +4,7 @@ A Model Context Protocol (MCP) server that connects AI models to external tools 
 
 ## Demo
 
-[
-
-![Watch the demo](https://img.youtube.com/vi/ppyr-vR8kqU/0.jpg)
-
-](https://www.youtube.com/watch?v=ppyr-vR8kqU)
+[Watch the demo](https://www.youtube.com/watch?v=ppyr-vR8kqU)
 
 ## How It Works
 
