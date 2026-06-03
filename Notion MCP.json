@@ -1,0 +1,127 @@
+{
+  "name": "Notion MCP",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "c4c82f40-ae0c-466e-ad1e-ac8f05ac857f"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        -16,
+        -688
+      ],
+      "id": "b4663b21-7a8a-41d9-a465-7bc957ec6d36",
+      "name": "MCP Server Trigger",
+      "webhookId": "feaddb06-b927-4309-9fe2-0a9afced3ddc"
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Parent_Page', 'The UUID of the parent page (e.g., 12345678-1234-1234-1234-123456789abc)') }}",
+          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12})"
+        },
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', 'The title of the new page') }}",
+        "simple": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Simplify', 'Whether to return simplified output', 'boolean') }}",
+        "blockUi": {
+          "blockValues": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notionTool",
+      "typeVersion": 2.2,
+      "position": [
+        -144,
+        -432
+      ],
+      "id": "7261209a-ed3f-4388-95df-55a8e69dcd2b",
+      "name": "Create a page in Notion",
+      "credentials": {
+        "notionApi": {
+          "id": "MPeE3g4vhG1i9OAq",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search_Text', 'Text to search for in Notion pages') }}",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', 'Maximum number of results to return', 'number') }}",
+        "simple": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Simplify', 'Whether to return simplified output', 'boolean') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notionTool",
+      "typeVersion": 2.2,
+      "position": [
+        64,
+        -416
+      ],
+      "id": "1956f220-1b0f-412b-9022-66695f2b764a",
+      "name": "Search a page in Notion",
+      "credentials": {
+        "notionApi": {
+          "id": "MPeE3g4vhG1i9OAq",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Notion MCP Server Workflow — \n\n**The Problem it solves:** Every time someone needs to create a new page or find an existing one in Notion, they have to stop what they're doing, open the app, and do it manually. Small task, but it breaks focus and slows everything down.\n\n**The Solution:** One MCP Server Trigger sits at the center and gives any AI agent direct control over Notion — create a new page or search for an existing one — all automatically, without touching the app.\n\n**One line summary:** Your Notion is now hands-free. Just ask, and the right page is created or found instantly.\n",
+        "height": 464,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        304,
+        -736
+      ],
+      "typeVersion": 1,
+      "id": "c48b9d1f-3cf7-4563-87ad-3c8f30ca720d",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Create a page in Notion": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search a page in Notion": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  },
+  "versionId": "315b6a05-636e-441d-a943-bf79140aeae5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e6fe3cc91d2e75250e1fb7acc8e673cbc132015c1ecf69d29688f37012e82feb"
+  },
+  "id": "JPOyooKE9LHElBB5",
+  "tags": []
+}

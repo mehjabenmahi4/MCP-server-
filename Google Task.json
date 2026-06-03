@@ -1,0 +1,215 @@
+{
+  "name": "Google Task",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "44446127-9b89-4a74-84ef-7e9b99fb16b7"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        16,
+        -256
+      ],
+      "id": "1fe6c5e3-4dae-4e6d-a456-317c39873716",
+      "name": "MCP Server Trigger",
+      "webhookId": "44446127-9b89-4a74-84ef-7e9b99fb16b7"
+    },
+    {
+      "parameters": {
+        "task": "MDQwMzE3NDk5NDUzMjIwOTk0NTA6MDow",
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        -112,
+        32
+      ],
+      "id": "c438729e-84f0-41e9-a90f-0d1587ee2f72",
+      "name": "Create a task in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "5Kcy9IHUoAShgx7a",
+          "name": "Google Tasks OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "task": "MDQwMzE3NDk5NDUzMjIwOTk0NTA6MDow",
+        "taskId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Task_ID', ``, 'string') }}",
+        "updateFields": {}
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        112,
+        48
+      ],
+      "id": "637ebfbb-3983-4616-84b9-ac64033a8bec",
+      "name": "Update a task in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "5Kcy9IHUoAShgx7a",
+          "name": "Google Tasks OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "task": "MDQwMzE3NDk5NDUzMjIwOTk0NTA6MDow",
+        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        288,
+        48
+      ],
+      "id": "dcd33153-da4b-4716-b56c-7bf99b4b3ee7",
+      "name": "Get many tasks in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "5Kcy9IHUoAShgx7a",
+          "name": "Google Tasks OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "task": "MDQwMzE3NDk5NDUzMjIwOTk0NTA6MDow",
+        "taskId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Task_ID', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        496,
+        48
+      ],
+      "id": "cd947a89-8d40-4958-bcf6-7630d6a8dc6a",
+      "name": "Get a task in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "5Kcy9IHUoAShgx7a",
+          "name": "Google Tasks OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "task": "MDQwMzE3NDk5NDUzMjIwOTk0NTA6MDow",
+        "taskId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Task_ID', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        720,
+        48
+      ],
+      "id": "5f19fd39-4d17-45bf-9fce-01db0aecf49b",
+      "name": "Delete a task in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "5Kcy9IHUoAShgx7a",
+          "name": "Google Tasks OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Google Tasks MCP Server Workflow\n\n**The Problem it solves:** Every day people waste time manually opening Google Tasks just to add, check, or delete tasks. Small actions, but they add up fast.\n\n**The Solution:** One MCP Server Trigger sits at the center and gives an AI agent complete control over Google Tasks — create, update, fetch, and delete — all automatically, no manual effort needed.\n\n**One line summary:** Your Google Tasks is now fully AI-powered. Just ask, and it's done.",
+        "height": 320,
+        "width": 352,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        704,
+        -416
+      ],
+      "typeVersion": 1,
+      "id": "c821b7fc-853f-42a6-87b4-6bd7f22d8e42",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Create a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many tasks in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  },
+  "versionId": "6775dcfd-337d-4ed9-945b-90a648b8942b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e6fe3cc91d2e75250e1fb7acc8e673cbc132015c1ecf69d29688f37012e82feb"
+  },
+  "id": "m6SVgrNHFbdv6wzW",
+  "tags": []
+}

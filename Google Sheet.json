@@ -1,0 +1,303 @@
+{
+  "name": "Google Sheet",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "d586d9ba-a09e-4002-8ca1-b73e85b6c4b3"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        320,
+        -192
+      ],
+      "id": "c6e955f3-9c13-45a9-99fe-3cc5356bf88e",
+      "name": "MCP Server Trigger",
+      "webhookId": "d586d9ba-a09e-4002-8ca1-b73e85b6c4b3"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg",
+          "mode": "list",
+          "cachedResultName": "personal data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Event Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -48,
+        112
+      ],
+      "id": "7135c0cf-fc8c-4717-8c27-ceb36855a082",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "PfFOnbADgaKTlxN8",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg",
+          "mode": "list",
+          "cachedResultName": "personal data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Event Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Date', ``, 'string') }}",
+            "Event Title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_Title', ``, 'string') }}",
+            "Attendees": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', ``, 'string') }}",
+            "Duration": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Duration', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Event Title",
+              "displayName": "Event Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Attendees",
+              "displayName": "Attendees",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Duration",
+              "displayName": "Duration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        384,
+        112
+      ],
+      "id": "32857de9-1a37-4091-860f-ea837eabb59f",
+      "name": "Append row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "PfFOnbADgaKTlxN8",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg",
+          "mode": "list",
+          "cachedResultName": "personal data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Event Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VUSza-LSJKrg7ksR0vRB9A7E1E-Z3uGXr7foHztoKEg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Date__using_to_match_', ``, 'string') }}",
+            "Event Title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_Title', ``, 'string') }}",
+            "Attendees": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Attendees', ``, 'string') }}",
+            "Duration": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Duration', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Date"
+          ],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Event Title",
+              "displayName": "Event Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Attendees",
+              "displayName": "Attendees",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Duration",
+              "displayName": "Duration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        176,
+        128
+      ],
+      "id": "c1638eb8-5fe0-4742-aa81-1f84e2e30887",
+      "name": "Update row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "PfFOnbADgaKTlxN8",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Google Sheets MCP Server Workflow — \n\n**The Problem it solves:** Manually opening Google Sheets to read data, update a row, or add new entries is a repetitive task that slows down any workflow — especially when it needs to happen every time an event occurs.\n\n**The Solution:** One MCP Server Trigger gives an AI agent direct control over Google Sheets — read existing rows, update a specific row, or append brand new data — all automatically, the moment a request comes in.\n\n**One line summary:** Your Google Sheets is now fully AI-controlled. Data gets logged, updated, and read automatically — no manual entry, ever.",
+        "height": 368,
+        "width": 368,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -192,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "9de497de-22f0-4175-8ad4-952951a79dca",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  },
+  "versionId": "913b2183-a843-480c-bd05-96fb260e95fe",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e6fe3cc91d2e75250e1fb7acc8e673cbc132015c1ecf69d29688f37012e82feb"
+  },
+  "id": "eX0lkMDHpahYucnC",
+  "tags": []
+}
